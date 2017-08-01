@@ -26,10 +26,10 @@
             <th ng-click="setSort('model')"><span class="pointer">Model</span></th>
             <th ng-click="setSort('capacity')"><span class="pointer">Capacity</span></th>
           </tr>
-          <tr ng-repeat="plane in filteredPlanes | orderBy:column:reverse">
-            <th>{{plane.make}}</th>
-            <th>{{plane.model}}</th>
-            <th>{{plane.capacity}}</th>
+          <tr ng-repeat="car in filteredCars | orderBy:column:reverse">
+            <th>{{car.make}}</th>
+            <th>{{car.model}}</th>
+            <th>{{car.capacity}}</th>
           </tr>
         </table>
       </div>
