@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Title</title>
+
+    <!-- CSS -->
+    <link href="style.css" rel="stylesheet">
+
+    
+  </head>
+  <body>
+    <div ng-app="myApp" class="appBox">
+      <div ng-controller="myController">
+        <h2>Sorting and Filtering</h2>
+        <p>Click on the catagories to sort the columns</p>
+        <br>
+        <input type="text" ng-model="filterString">
+        <input type="button" ng-click="setFilter()" value="Filter">
+        <table>
+          <tr>
+            <th ng-click="setSort('make')"><span class="pointer">Make</span></th>
+            <th ng-click="setSort('model')"><span class="pointer">Model</span></th>
+            <th ng-click="setSort('capacity')"><span class="pointer">Capacity</span></th>
+          </tr>
+          <tr ng-repeat="plane in filteredPlanes | orderBy:column:reverse">
+            <th>{{plane.make}}</th>
+            <th>{{plane.model}}</th>
+            <th>{{plane.capacity}}</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- scripts -->
+    <script src="app.js"></script>
+  </body>
+</html>
